@@ -4,3 +4,5 @@
 I am not a link.
 <br>
 [fakeLink]Iamfake.html
+
+![img1](amazing-Img.png)
