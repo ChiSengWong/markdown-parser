@@ -23,6 +23,11 @@ public class MarkdownParseTest {
         Path fileName = Path.of("break_test.md");
         String content = Files.readString(fileName);
         assertEquals(List.of("https://something.com", "some-thing.html"), MarkdownParse.getLinks(content));
-
+    }
+    @Test
+    public void breakTest2() throws IOException {
+        Path fileName = Path.of("break_test2.md");
+        String content = Files.readString(fileName);
+        assertEquals(List.of("https://something.com", "some-thing.html"), MarkdownParse.getLinks(content));
     }
 }
