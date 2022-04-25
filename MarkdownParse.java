@@ -18,7 +18,9 @@ public class MarkdownParse {
             int closeParen = markdown.indexOf(")", openParen);
             // if next any brackets or parenthesis is not found, break the loop to prevent infinite loop.
             if ( closeBracket == -1 || openParen == -1 || closeParen == -1 ||openBracket == -1) break;
-            toReturn.add(markdown.substring(openParen + 1, closeParen));
+            if (openBracket > 0 && markdown.charAt(openBracket - 1) == '!') {
+                openParen = closeParen -1;
+            }else toReturn.add(markdown.substring(openParen + 1, closeParen));
 
 
             currentIndex = closeParen + 1;
